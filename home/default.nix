@@ -1,12 +1,13 @@
 { config, pkgs, ... }:
 
 {
+  targets.genericLinux.enable = true;
+
   home = {
     username = "root";
     homeDirectory = "/root";
     stateVersion = "24.05";
   };
-  home-manager.useUserPackages = true;
 
   imports = [
     ./programs/default.nix
