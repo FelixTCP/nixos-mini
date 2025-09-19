@@ -24,7 +24,6 @@
       homeConfigurations.felix = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home/default.nix ];
-        nix = { settings.experimental-features = [ "nix-command" "flakes" ]; };
       };
     };
 }
