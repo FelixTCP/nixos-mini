@@ -1,19 +1,16 @@
-{ pkgs }:
+{ pkgs }: {
+  home.packages = with pkgs; [
+    # Java SDK
+    zulu
 
-with pkgs;
+    # Build Tools
+    maven
 
-[
-  # Java SDK
-  zulu
+    # Linters / Formatters
+    google-java-format
+    checkstyle
 
-  # Build Tools
-  maven
-
-  # Linters / Formatters
-  google-java-format
-  checkstyle
-
-  # Other
-  lombok
-]
-
+    # Other
+    lombok
+  ];
+}

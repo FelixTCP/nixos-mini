@@ -1,10 +1,8 @@
-{ pkgs }:
+{ pkgs }: {
+  home.packages = with pkgs; [
+    lua
 
-with pkgs;
-
-[
-  lua
-
-  # Formatters / Linters
-  stylua
-]
+    # Formatters / Linters
+    stylua
+  ];
+}

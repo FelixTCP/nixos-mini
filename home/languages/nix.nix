@@ -1,9 +1,8 @@
-{ pkgs }:
+{ pkgs }: {
+  home.packages = with pkgs;
+    [
 
-with pkgs;
-
-[
-  # Formatters / Linters
-  statix
-]
-
+      # Formatters / Linters
+      statix
+    ];
+}
