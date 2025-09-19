@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home = {
@@ -11,7 +11,11 @@
   programs.git.enable = true;
 
   # Import nixvim module
-  imports = [ ./programs/default.nix ];
+  imports = [
+    inputs.nixvim.homeModules.nixvim
+    inputs.catppuccin.homeModules.catppuccin
+    ./programs/default.nix
+  ];
 
 }
 
