@@ -13,14 +13,19 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
-    homeConfigurations.felix = home-manager.lib.homeManagerConfiguration {
+  outputs = { nixpkgs, home-manager, ... }:
+    let
+      system = "x86_64-linux";
       pkgs = import nixpkgs {
-        system = "x86_64-linux";
-        config = { allowUnfree = true; };
+        inherit system;
+        config.allowUnfree = true;
       };
-      modules = [ ./home/default.nix ];
+    in {
+      homeConfigurations.felix = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./home/default.nix ];
+        nix = { settings.experimental-features = [ "nix-command" "flakes" ]; };
+      };
     };
-  };
 }
 
