@@ -12,8 +12,6 @@
     ./nixvim/default.nix
     ./zoxide.nix
     ./zsh.nix
-
-    ./scripts/default.nix
   ];
 }
 
