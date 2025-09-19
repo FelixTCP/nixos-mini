@@ -8,5 +8,7 @@
     ripgrep
     fd
     fzf
+    ncurses
+    coreutils
   ];
 }
