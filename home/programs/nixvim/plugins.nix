@@ -45,10 +45,6 @@
             group = "Git";
           }
           {
-            __unkeyed-1 = "<leader>l";
-            group = "LaTeX";
-          }
-          {
             __unkeyed-1 = "<leader>m";
             group = "Markdown";
           }
@@ -111,11 +107,13 @@
       clangd.enable = true;
       nil_ls.enable = true; # Nix LSP
       pyright.enable = true; # Python LSP
+      jdtls.enable = true; # Java LSP
+
       # Web development LSPs
       html.enable = true;
       cssls.enable = true;
-      # Use tsserver for both JS and TS
-      ts_ls.enable = true;
+      ts_ls.enable = true; # For both JS and TS
+      angularls.enable = true; # Angular LSP
       jsonls.enable = true; # JSON LSP
       yamlls.enable = true; # YAML LSP
     };
@@ -141,6 +139,7 @@
           yaml = [ "prettierd" "prettier" ];
           markdown = [ "prettierd" "prettier" ];
           python = [ "black" ];
+          java = [ "google-java-format" ];
           lua = [ "stylua" ];
           nix = [ "nixfmt" ]; # Use nixfmt-classic instead of nixfmt
           #"*" = [ "codespell" ]; # Apply codespell to all filetypes
@@ -152,6 +151,7 @@
     lint.lintersByFt = {
       json = [ "jsonlint" ];
       nix = [ "statix" ];
+      java = [ "checkstyle" ];
       # Add other linters, e.g., shellcheck for shell scripts
       # sh = [ "shellcheck" ];
     };

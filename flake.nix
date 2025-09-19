@@ -15,7 +15,7 @@
         config.allowUnfree = true;
       };
     in {
-      homeConfigurations.felix = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.root = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home/default.nix nixvim.homeModules.nixvim ];
       };

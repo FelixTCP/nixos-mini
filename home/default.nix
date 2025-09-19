@@ -2,11 +2,17 @@
 
 {
   home = {
-    username = "felix";
-    homeDirectory = "/home/felix";
+    username = "root";
+    homeDirectory = "/root";
     stateVersion = "24.05";
   };
 
-  imports = [ ./programs/default.nix ];
+  imports = [
+    ./programs/default.nix
+    ./languages/default.nix
+
+    # further utilies
+    ./utils.nix
+  ];
 }
 
