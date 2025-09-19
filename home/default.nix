@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   home = {
@@ -7,15 +7,6 @@
     stateVersion = "24.05";
   };
 
-  programs.zsh.enable = true;
-  programs.git.enable = true;
-
-  # Import nixvim module
-  imports = [
-    inputs.nixvim.homeModules.nixvim
-    inputs.catppuccin.homeModules.catppuccin
-    ./programs/default.nix
-  ];
-
+  imports = [ ./programs/default.nix ];
 }
 

@@ -3,17 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager.url = "github:nix-community/home-manager";
+    nixvim.url = "github:nix-community/nixvim";
+    catppuccin.url = "github:catppuccin/nvim";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixvim, catppuccin, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -23,7 +18,11 @@
     in {
       homeConfigurations.felix = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/default.nix ];
+        modules = [
+          ./home/default.nix
+          nixvim.homeModules.nixvim
+          catppuccin.homeModules.catppuccin
+        ];
       };
     };
 }
