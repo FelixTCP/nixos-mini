@@ -1,4 +1,4 @@
-{ pkgs }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     # Java SDK
     zulu
