@@ -8,6 +8,7 @@
     ripgrep
     fd
     fzf
+    delta
     #ncurses
   ];
 }
