@@ -9,6 +9,5 @@
     fd
     fzf
     ncurses
-    coreutils
   ];
 }
