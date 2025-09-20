@@ -9,6 +9,6 @@
     fd
     fzf
     delta
-    #ncurses
+    ncurses
   ];
 }
