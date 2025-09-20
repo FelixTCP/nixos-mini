@@ -24,13 +24,12 @@
       ll = "eza -l";
       lt = "eza -T --level=3";
       git-loc = "git ls-files | xargs wc -l";
-      oth-connect = "sudo openfortivpn -c ~/.vpn/openfortivpn/oth";
-      kigs-connect = "ssh wef41751@194.95.108.135";
-      secrets-edit = "cd ~/.config/nixos/secrets && sops secrets.yaml";
-      secrets-list = "ls -la /run/secrets/";
-      secrets-reload = "sudo systemctl restart vpn-config-generator.service";
     };
     initContent = ''
+      # Set proper locale
+      export LANG=en_US.UTF-8
+      export LC_ALL=en_US.UTF-8
+
       # Enable correction
       setopt CORRECT
       setopt CORRECT_ALL
