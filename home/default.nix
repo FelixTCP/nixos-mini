@@ -2,6 +2,8 @@
 
 {
   targets.genericLinux.enable = true;
+  manual.man.enable = false;
+  programs.man.enable = false;
 
   home = {
     username = "root";
